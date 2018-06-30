@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Wall
   - Roof
+  - Straight
+  - Left
+  - Right
   layers:
   - Default
   - TransparentFX

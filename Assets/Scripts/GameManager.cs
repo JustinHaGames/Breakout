@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour {
 		//declare that the gamemanager object is the instance
 		instance = this; 
 
+		//the game doesn't start until the ball is launched
 		gameStart = false; 
 	}
 	

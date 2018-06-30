@@ -50,6 +50,7 @@ public class PlayerMovement : MonoBehaviour {
 			vel.x = 0; 
 		}
 
+		//This code updates the changes made to the player's velocity when interacting with other objects
 		rb.MovePosition ((Vector2)transform.position + vel * Time.deltaTime);
 	}
 }
