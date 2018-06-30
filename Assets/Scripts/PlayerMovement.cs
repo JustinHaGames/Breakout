@@ -26,14 +26,24 @@ public class PlayerMovement : MonoBehaviour {
 		//Identify if right is being input with either the right arrow key or the D key
 		bool right = Input.GetKey (KeyCode.RightArrow) || Input.GetKey(KeyCode.D);
 
+		//This will launch the ball at the start of the game
+		bool launch = Input.GetKeyDown (KeyCode.Space);
+
+		//The game starts when the player launches the ball
+		if (GameManager.instance.gameStart == false && launch) {
+			GameManager.instance.gameStart = true; 
+		}
+
 		//This code applies the velocity to the player when their respected keys are pressed
 		//If no keys are pressed, the velocity is 0 
 		if (left) {
 			vel.x = -moveVelX;
+			GameManager.instance.playerLeft = true;
 		}
 
 		if (right) {
 			vel.x = moveVelX;
+			GameManager.instance.playerRight = true; 
 		}
 
 		if (!left && !right) {
