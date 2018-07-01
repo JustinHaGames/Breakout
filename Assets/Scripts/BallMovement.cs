@@ -75,7 +75,12 @@ public class BallMovement : MonoBehaviour {
 		}
 
 		if (coll.gameObject.tag == "Brick") {
-			vel.x *= -1f;
+			vel.y *= -1f;
+		}
+
+		if (coll.gameObject.tag == "PLeft" || coll.gameObject.tag == "PRight") {
+			vel.x *= -1f; 
+			vel.y *= -1f; 
 		}
 
 	}

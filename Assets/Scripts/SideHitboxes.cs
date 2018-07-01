@@ -16,7 +16,9 @@ public class SideHitboxes : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D coll){
 		if (coll.gameObject.tag == "Ball") {
-			Destroy (transform.parent.gameObject);
+			if (transform.parent.gameObject.tag == "Brick") {
+				Destroy (transform.parent.gameObject);
+			}
 		}
 	}
 

@@ -9,6 +9,10 @@ TagManager:
   - Straight
   - Left
   - Right
+  - Brick
+  - Ball
+  - PRight
+  - PLeft
   layers:
   - Default
   - TransparentFX
@@ -18,8 +22,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - Child
   - 
   - 
   - 
