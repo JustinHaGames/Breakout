@@ -66,18 +66,22 @@ public class BallMovement : MonoBehaviour {
 			vel.y *= -1f; 
 		}
 
+		//Reverse the y velocity when the ball hits teh player
 		if (coll.gameObject.tag == "Player") {
 			vel.y *= -1f;
 		}
 
+		//When the right or left side of a brick is hit, reverse the x velocity
 		if (coll.gameObject.tag == "Left" || coll.gameObject.tag == "Right") {
 			vel.x *= -1f;
 		}
 
+		//When the ball hits the bottom or top of a brick, reverse the y velocity
 		if (coll.gameObject.tag == "Brick") {
 			vel.y *= -1f;
 		}
 
+		//When the player's sides are hit, reverse the x velocity and y velocity to guarantee it goes up
 		if (coll.gameObject.tag == "PLeft" || coll.gameObject.tag == "PRight") {
 			vel.x *= -1f; 
 			vel.y *= -1f; 

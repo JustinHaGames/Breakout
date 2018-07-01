@@ -15,9 +15,10 @@ public class Brick : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D (Collision2D coll){
-		//If the brick collides with the ball, destroy the ball
+		//If the brick collides with the ball, destroy the brick and add a point
 		if (coll.gameObject.tag == "Ball") {
 			Destroy (gameObject);
+			GameManager.instance.score += 1; 
 		}
 	}
 }
