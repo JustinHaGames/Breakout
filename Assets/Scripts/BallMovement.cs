@@ -24,6 +24,7 @@ public class BallMovement : MonoBehaviour {
 		//The game will randomly decide which direction the ball will launch
 		int rndNum = Random.Range (0, 2);
 
+		//If the random number is 0, launch right. If it's 1, launch left. 
 		if (rndNum == 0) {
 			vel.x = moveVelX;
 		} else if (rndNum == 1) {
@@ -51,6 +52,11 @@ public class BallMovement : MonoBehaviour {
 
 		//This code updates the changes made to the ball's velocity when interacting with other objects
 		rb.MovePosition ((Vector2)transform.position + vel * Time.deltaTime);
+
+		//if the ball's Y position is less than -5.5, then game over 
+		if (transform.position.y <= -5.5f) {
+			GameManager.instance.gameOver = true;
+		}
 
 	}
 

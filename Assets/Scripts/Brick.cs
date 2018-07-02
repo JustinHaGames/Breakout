@@ -4,21 +4,12 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	void OnCollisionEnter2D (Collision2D coll){
 		//If the brick collides with the ball, destroy the brick and add a point
 		if (coll.gameObject.tag == "Ball") {
-			Destroy (gameObject);
 			GameManager.instance.score += 1; 
+			GameManager.instance.brickHit = true; 
+			Destroy (gameObject);
 		}
 	}
 }
